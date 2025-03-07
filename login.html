@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            margin: 0;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hacker-img {
+            display: none;
+            text-align: center;
+        }
+        .hacker-img img {
+            width: 300px;
+            animation: glitch 1s infinite alternate;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes glitch {
+            0% { transform: translateX(0px); }
+            50% { transform: translateX(5px); }
+            100% { transform: translateX(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginBox">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    <div class="hacker-img" id="hackerBox">
+        <h2>Access Granted</h2>
+        <img src="https://i.imgur.com/Z9eI7Tt.png" alt="Hacker Image">
+    </div>
+    <script>
+        function login() {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('hackerBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
